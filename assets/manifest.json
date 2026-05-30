@@ -1,0 +1,111 @@
+{
+  "version": 2,
+  "basePath": "assets/",
+  "_note": "js/data.js の SBR.MANIFEST と同期。status を placeholder→ready にし、file の PNG を配置すると自動で差し替わる。HEROは若い女性営業。size: キャラ1024x1536 / 背景1536x1024。",
+  "sprites": {
+    "hero_neutral": {
+      "file": "characters/hero_neutral.png",
+      "w": 1024,
+      "h": 1536,
+      "transparent": true,
+      "status": "ready",
+      "prompt": "Vibrant anime illustration, full body, a cheerful Japanese woman in her early 20s, rookie sales representative, neat navy blue business suit with a small company badge, shoulder-length brown hair, big sparkling eyes, confident friendly smile, standing energetically holding a tablet, bright cel-shaded anime style, clean vivid colors, dynamic exciting JRPG character art, standing on a flat solid chroma-key green background (#00b140), the green fills the entire background edge to edge, no shadow on the ground"
+    },
+    "hero_joy": {
+      "file": "characters/hero_joy.png",
+      "w": 1024,
+      "h": 1536,
+      "transparent": true,
+      "status": "ready",
+      "prompt": "Vibrant anime illustration, full body, the same cheerful young Japanese woman rookie salesperson (navy suit, shoulder-length brown hair), overjoyed big happy smile, sparkling eyes, victorious fist pump, sparkles around, bright cel-shaded anime style, dynamic exciting JRPG art, standing on a flat solid chroma-key green background (#00b140), the green fills the entire background edge to edge, no shadow on the ground"
+    },
+    "hero_anger": {
+      "file": "characters/hero_anger.png",
+      "w": 1024,
+      "h": 1536,
+      "transparent": true,
+      "status": "ready",
+      "prompt": "Vibrant anime illustration, full body, the same young Japanese woman rookie salesperson (navy suit, shoulder-length brown hair), determined fired-up serious expression, fist clenched with fighting spirit, motivated pose, bright cel-shaded anime style, dynamic JRPG art, standing on a flat solid chroma-key green background (#00b140), the green fills the entire background edge to edge, no shadow on the ground"
+    },
+    "hero_sad": {
+      "file": "characters/hero_sad.png",
+      "w": 1024,
+      "h": 1536,
+      "transparent": true,
+      "status": "ready",
+      "prompt": "Vibrant anime illustration, full body, the same young Japanese woman rookie salesperson (navy suit, shoulder-length brown hair), anxious worried teary expression, a sweat drop, slightly slumped shoulders, cute cel-shaded anime style, JRPG art, standing on a flat solid chroma-key green background (#00b140), the green fills the entire background edge to edge, no shadow on the ground"
+    },
+    "hero_surprise": {
+      "file": "characters/hero_surprise.png",
+      "w": 1024,
+      "h": 1536,
+      "transparent": true,
+      "status": "ready",
+      "prompt": "Vibrant anime illustration, full body, the same young Japanese woman rookie salesperson (navy suit, shoulder-length brown hair), shocked wide-eyed surprised expression, hands raised in surprise, cel-shaded anime style, JRPG art, standing on a flat solid chroma-key green background (#00b140), the green fills the entire background edge to edge, no shadow on the ground"
+    },
+    "receptionist": {
+      "file": "enemies/receptionist.png",
+      "w": 1024,
+      "h": 1536,
+      "transparent": true,
+      "status": "ready",
+      "prompt": "Anime illustration, a polite Japanese corporate receptionist woman in a smart uniform standing behind a tall solid reception counter, ONLY her upper body from the waist up is visible above the counter, her legs and feet are completely hidden behind the wooden reception counter, both hands resting politely on the counter, neutral business smile, cel-shaded anime style, clean colors, JRPG NPC art, everything behind and above her is a flat solid chroma-key green background (#00b140) filling the frame edge to edge"
+    },
+    "manager": {
+      "file": "enemies/manager.png",
+      "w": 1024,
+      "h": 1536,
+      "transparent": true,
+      "status": "ready",
+      "prompt": "Anime illustration, full body, a middle-aged Japanese department manager man in a grey business suit, arms crossed, slightly stern skeptical expression, cel-shaded anime style, JRPG NPC art, standing on a flat solid chroma-key green background (#00b140), the green fills the entire background edge to edge, no shadow on the ground"
+    },
+    "staff": {
+      "file": "enemies/staff.png",
+      "w": 1024,
+      "h": 1536,
+      "transparent": true,
+      "status": "ready",
+      "prompt": "Anime illustration, full body, an ordinary Japanese office worker client man in business casual shirt, neutral thinking expression holding documents, cel-shaded anime style, JRPG NPC art, standing on a flat solid chroma-key green background (#00b140), the green fills the entire background edge to edge, no shadow on the ground"
+    },
+    "gatekeeper": {
+      "file": "enemies/gatekeeper.png",
+      "w": 1024,
+      "h": 1536,
+      "transparent": true,
+      "status": "ready",
+      "prompt": "Dramatic anime illustration, full body, a stern strict imposing Japanese gatekeeper receptionist woman in dark formal uniform, intimidating boss aura, dramatic rim lighting, cel-shaded anime style, JRPG boss character art, standing on a flat solid chroma-key green background (#00b140), the green fills the entire background edge to edge, no shadow on the ground"
+    },
+    "bg_lobby": {
+      "file": "bg/lobby.png",
+      "w": 1536,
+      "h": 1024,
+      "transparent": false,
+      "status": "ready",
+      "prompt": "Anime background art, bright modern corporate office building lobby, glass walls, sunlight, plants, reception desk in distance, no people, vibrant clean anime scenery, JRPG location background"
+    },
+    "bg_meeting": {
+      "file": "bg/meeting.png",
+      "w": 1536,
+      "h": 1024,
+      "transparent": false,
+      "status": "ready",
+      "prompt": "Anime background art, stylish modern meeting room with a large table, big windows with a bright city view, no people, vibrant clean anime scenery, JRPG location background"
+    },
+    "bg_office": {
+      "file": "bg/office.png",
+      "w": 1536,
+      "h": 1024,
+      "transparent": false,
+      "status": "ready",
+      "prompt": "Anime background art, bright energetic open-plan modern office with desks and monitors, warm daylight, no people, vibrant clean anime scenery, JRPG location background"
+    },
+    "bg_map": {
+      "file": "bg/map.png",
+      "w": 1536,
+      "h": 1024,
+      "transparent": false,
+      "status": "ready",
+      "prompt": "Anime background art, bright inspiring business city skyline at golden hour from a high office window, sense of growth and adventure, no people, vibrant clean anime scenery, JRPG world map background"
+    }
+  }
+}

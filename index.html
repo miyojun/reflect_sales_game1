@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商談バトルRPG 〜新米営業 成長物語〜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="gameContainer">
+   <div id="stage">
+    <canvas id="game" width="960" height="600"></canvas>
+
+    <!-- DOMオーバーレイUI -->
+    <div id="overlay">
+      <!-- 会話バブル -->
+      <div id="dialogue" class="hidden">
+        <span id="dialogueSpeaker"></span>
+        <p id="dialogueText"></p>
+        <span id="dialogueHint">▼ クリック / Space</span>
+      </div>
+
+      <!-- トーク選択メニュー -->
+      <div id="talkMenu" class="hidden"></div>
+
+      <!-- ナレッジトースト -->
+      <div id="knowledge" class="hidden">
+        <div class="kn-head">💡 ナレッジ</div>
+        <div class="kn-term" id="knTerm"></div>
+        <div class="kn-body" id="knBody"></div>
+      </div>
+
+      <!-- アクション操作ヒント -->
+      <div id="actionHint" class="hidden"></div>
+    </div>
+
+    <!-- 画面遷移用 大型オーバーレイ -->
+    <div id="screenLayer"></div>
+   </div>
+  </div>
+
+  <!-- Tone.js (音) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+  <!-- 依存順に読み込み -->
+  <script src="js/config.js?v=5"></script>
+  <script src="js/data.js?v=5"></script>
+  <script src="js/save.js?v=5"></script>
+  <script src="js/assets.js?v=5"></script>
+  <script src="js/audio.js?v=5"></script>
+  <script src="js/fx.js?v=5"></script>
+  <script src="js/combat.js?v=5"></script>
+  <script src="js/render.js?v=5"></script>
+  <script src="js/screens.js?v=5"></script>
+  <script src="js/game.js?v=5"></script>
+</body>
+</html>
