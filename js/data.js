@@ -329,5 +329,12 @@ SBR.MANIFEST = {
     bg_meeting:    { file: 'bg/meeting.png', status: 'ready', w: 1536, h: 1024, transparent: false },
     bg_office:     { file: 'bg/office.png',  status: 'ready', w: 1536, h: 1024, transparent: false },
     bg_map:        { file: 'bg/map.png',     status: 'ready', w: 1536, h: 1024, transparent: false },
+    icon_apo:      { file: 'icons/icon_apo.png',      status: 'ready', w: 1024, h: 1024, transparent: true },
+    icon_hearing:  { file: 'icons/icon_hearing.png',  status: 'ready', w: 1024, h: 1024, transparent: true },
+    icon_issue:    { file: 'icons/icon_issue.png',    status: 'ready', w: 1024, h: 1024, transparent: true },
+    icon_proposal: { file: 'icons/icon_proposal.png', status: 'ready', w: 1024, h: 1024, transparent: true },
+    icon_rebuttal: { file: 'icons/icon_rebuttal.png', status: 'ready', w: 1024, h: 1024, transparent: true },
+    icon_closing:  { file: 'icons/icon_closing.png',  status: 'ready', w: 1024, h: 1024, transparent: true },
+    icon_follow:   { file: 'icons/icon_follow.png',   status: 'ready', w: 1024, h: 1024, transparent: true },
   },
 };

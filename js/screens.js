@@ -206,22 +206,50 @@ SBR.Screens.map = {
     for (const n of this.hot) {
       const pulse = n.unlocked && !n.cleared ? 1 + Math.sin(t * 0.005) * 0.06 : 1;
       ctx.save(); ctx.translate(n.x, n.y); ctx.scale(pulse, pulse);
+      // 円の土台
       ctx.beginPath(); ctx.arc(0, 0, n.r, 0, Math.PI * 2);
       ctx.fillStyle = n.cleared ? '#2a8f5a' : (n.unlocked ? '#1b2a66' : '#1a1d33');
       ctx.fill();
+      // プロセスアイコン（円内にクリップ）
+      const icon = SBR.Assets.get('icon_' + n.stage.id);
+      if (icon) {
+        ctx.save();
+        ctx.beginPath(); ctx.arc(0, 0, n.r - 4, 0, Math.PI * 2); ctx.clip();
+        const d = (n.r - 4) * 2;
+        if (!n.unlocked) ctx.globalAlpha = 0.32;   // 未開放はうっすら
+        ctx.drawImage(icon, -d / 2, -d / 2, d, d);
+        ctx.restore();
+      }
+      // 枠
+      ctx.beginPath(); ctx.arc(0, 0, n.r, 0, Math.PI * 2);
       ctx.lineWidth = 3;
       ctx.strokeStyle = n.cleared ? '#5ee08a' : (n.unlocked ? '#4fd1ff' : '#333a55');
       ctx.stroke();
-      ctx.fillStyle = n.unlocked ? '#fff' : '#555f80';
-      ctx.font = "900 16px 'Noto Sans JP'"; ctx.textAlign = 'center';
-      ctx.fillText(n.stage.order, 0, -6);
-      ctx.font = "700 11px 'Noto Sans JP'";
-      ctx.fillText(n.cleared ? '✓' : (n.unlocked ? '挑戦' : '🔒'), 0, 14);
+      // 状態バッジ（右上の小円：番号/✓/🔒）
+      ctx.save();
+      ctx.translate(n.r * 0.7, -n.r * 0.7);
+      ctx.beginPath(); ctx.arc(0, 0, 13, 0, Math.PI * 2);
+      ctx.fillStyle = n.cleared ? '#2a8f5a' : (n.unlocked ? '#1b2a66' : '#22263c');
+      ctx.fill();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = n.cleared ? '#5ee08a' : (n.unlocked ? '#4fd1ff' : '#444c6e');
+      ctx.stroke();
+      ctx.fillStyle = '#fff'; ctx.font = "900 13px 'Noto Sans JP'";
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(n.cleared ? '✓' : (n.unlocked ? n.stage.order : '🔒'), 0, 1);
       ctx.restore();
-      // ステージ名
-      ctx.fillStyle = n.unlocked ? '#eaf2ff' : '#556';
+      ctx.textBaseline = 'alphabetic';
+      ctx.restore();
+      // ステージ名（帯付きで視認性UP）
+      ctx.save();
       ctx.font = "700 13px 'Noto Sans JP'"; ctx.textAlign = 'center';
-      ctx.fillText(n.stage.name, n.x, n.y + n.r + 18);
+      const label = n.stage.name;
+      const lw = ctx.measureText(label).width + 16;
+      ctx.fillStyle = 'rgba(8,12,32,0.72)';
+      SBR.roundRect(ctx, n.x - lw / 2, n.y + n.r + 6, lw, 20, 6); ctx.fill();
+      ctx.fillStyle = n.unlocked ? '#eaf2ff' : '#7a83a6';
+      ctx.fillText(label, n.x, n.y + n.r + 20);
+      ctx.restore();
     }
     ctx.restore();
   },
