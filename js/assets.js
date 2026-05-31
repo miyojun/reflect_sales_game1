@@ -59,9 +59,18 @@ SBR.Assets = {
   },
 };
 
+// キャラのスプライトキーを解決（hero は mood別、敵は単一キー）
+SBR.spriteKey = function (charId, mood) {
+  return SBR.Assets.images[`${charId}_${mood}`] ? `${charId}_${mood}` : charId;
+};
+
 // キャラ用: charId(例 'hero') + mood(例 'joy') → スプライト or null
 SBR.getCharacterSprite = function (charId, mood) {
-  // hero は mood別、敵は単一キー
-  const key = SBR.Assets.images[`${charId}_${mood}`] ? `${charId}_${mood}` : charId;
-  return SBR.Assets.get(key);
+  return SBR.Assets.get(SBR.spriteKey(charId, mood));
+};
+
+// そのキャラにPNG（manifest登録）が存在するか。
+// true の場合、読み込み完了までは仮絵を描かず空にする（起動直後の一瞬の仮絵チラつき防止）。
+SBR.spriteExpected = function (charId, mood) {
+  return !!SBR.Assets.images[SBR.spriteKey(charId, mood)];
 };

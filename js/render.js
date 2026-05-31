@@ -96,7 +96,9 @@ SBR.Render = {
         ctx.globalCompositeOperation = 'lighter';
         ctx.drawImage(img, dx, dy, dw, dh); // ヒット時に白フラッシュ（シルエットを発光）
       }
-    } else {
+    } else if (!SBR.spriteExpected(charId, mood)) {
+      // PNGが登録されていないキャラのみ仮絵を描く。
+      // 登録済み（＝読み込み中）の場合は何も描かず、本画像の表示を待つ（起動直後の仮絵チラつき防止）。
       const hue = (SBR.Assets.meta(charId) || {}).hue ?? (charId.startsWith('hero') ? 200 : 340);
       this.drawPlaceholderCharacter(ctx, charId, mood, x, yy, w, h * breath, hue, t);
       if (opt.hitFlash > 0) {
