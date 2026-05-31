@@ -15,8 +15,8 @@ SBR.Audio = {
     menu:     'bgm/メニュー画面.mp3',      // タイトル / マップ
     apo:      'bgm/受付突破.mp3',          // アポ獲得
     hearing:  'bgm/受付突破.mp3',          // ヒアリング
-    issue:    'bgm/提案ミッション.mp3',    // 課題特定
-    proposal: 'bgm/提案ミッション.mp3',    // 提案
+    issue:    'bgm/受付突破2.mp3',         // 課題特定
+    proposal: 'bgm/受付突破2.mp3',         // 提案
     rebuttal: 'bgm/クロージング.mp3',      // 反論処理
     closing:  'bgm/クロージング.mp3',      // クロージング
     follow:   'bgm/フォロー.mp3',          // フォロー
