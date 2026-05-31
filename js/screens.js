@@ -591,13 +591,24 @@ SBR.Screens.ending = {
     this.startT = null;
     const layer = SBR.UI.el('screenLayer');
     layer.innerHTML = `
-      <div class="screen-panel" style="justify-content:flex-end;padding-bottom:8%;">
+      <div class="screen-panel" style="justify-content:flex-end;padding-bottom:6%;gap:14px;">
         <button class="btn-main" id="btnTitle">タイトルへ</button>
+        <a id="endingCta" href="https://reflect.page/contact/corporation" target="_blank" rel="noopener">
+          本格的にAIとロープレ営業研修をしたい方はこちら ▶
+        </a>
       </div>`;
     SBR.UI.el('btnTitle').onclick = () => SBR.changeScreen('title');
     this.rank = rank;
+    // 卒業シーンはCTAが画面下部に来るため、ロゴを右上へ退避（重なり回避）
+    const logo = document.getElementById('siteLogo');
+    if (logo) { logo.style.left = 'auto'; logo.style.right = '14px'; logo.style.bottom = 'auto'; logo.style.top = '14px'; }
   },
-  exit() { SBR.UI.clearScreenLayer(); },
+  exit() {
+    SBR.UI.clearScreenLayer();
+    // ロゴを通常の左下位置へ戻す
+    const logo = document.getElementById('siteLogo');
+    if (logo) { logo.style.left = ''; logo.style.right = ''; logo.style.bottom = ''; logo.style.top = ''; }
+  },
 
   _palette: ['#ffd166', '#4fd1ff', '#5ee08a', '#ff6b8a', '#c792ff', '#ffffff'],
 

@@ -48,7 +48,7 @@ html, body {
 /* ===== 会話バブル ===== */
 #dialogue {
   position: absolute;
-  left: 6%; right: 6%; bottom: 5%;
+  left: 140px; right: 6%; bottom: 5%;
   min-height: 90px;
   background: rgba(8,12,32,0.92);
   border: 2px solid #4fd1ff;
@@ -79,7 +79,7 @@ html, body {
 /* ===== トーク選択 ===== */
 #talkMenu {
   position: absolute;
-  left: 6%; right: 6%; bottom: 5%;
+  left: 140px; right: 6%; bottom: 5%;
   display: flex; flex-direction: column; gap: 8px;
 }
 .talk-btn {
@@ -175,3 +175,36 @@ html, body {
 @keyframes floatUp { from{opacity:1; transform: translateY(0);} to{opacity:0; transform: translateY(-30px);} }
 @keyframes shakeX { 0%,100%{transform:none;} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
 .shake { animation: shakeX .25s ease; }
+
+/* ===== リフレクト ロゴ（全画面 左下・クリックで公式サイトへ） ===== */
+#siteLogo {
+  position: absolute;
+  left: 12px; bottom: 10px;
+  width: 116px;            /* 16:9ロゴ → 高さ約65px。会話ボックスは left:140px で回避 */
+  z-index: 60;
+  opacity: 0.85;
+  transition: opacity .15s ease, transform .15s ease;
+  pointer-events: auto;
+  line-height: 0;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.7));
+}
+#siteLogo:hover { opacity: 1; transform: scale(1.06); }
+#siteLogo img { width: 100%; height: auto; display: block; }
+
+/* ===== 卒業シーン お問い合わせCTA ===== */
+#endingCta {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffd166, #ff9f43);
+  color: #3a2400;
+  font-weight: 900;
+  font-size: clamp(13px, 1.7vw, 17px);
+  text-decoration: none;
+  box-shadow: 0 4px 0 #c87f1e, 0 0 22px rgba(255,209,102,0.6);
+  animation: ctaPulse 1.4s ease-in-out infinite;
+}
+#endingCta:hover { transform: translateY(-2px) scale(1.03); }
+#endingCta:active { transform: translateY(2px); box-shadow: 0 2px 0 #c87f1e; }
+@keyframes ctaPulse { 0%,100%{ box-shadow:0 4px 0 #c87f1e, 0 0 18px rgba(255,209,102,0.5);} 50%{ box-shadow:0 4px 0 #c87f1e, 0 0 30px rgba(255,209,102,0.95);} }
