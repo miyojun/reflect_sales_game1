@@ -82,6 +82,17 @@ SBR.initInput = function () {
     if (SBR.game.screen && SBR.game.screen.handleInput)
       SBR.game.screen.handleInput({ type: 'key', key: e.key });
   });
+
+  // 最初のユーザー操作（ブラウザの自動再生制限解除）で音声を起動し、
+  // 現在画面のBGM（タイトル/マップならメニュー曲）を即再生する。一度きり。
+  const unlockAudio = async () => {
+    await SBR.Audio.start();
+    const name = SBR.game.screenName;
+    if (name === 'title' || name === 'map') SBR.Audio.playBgm('menu');
+  };
+  window.addEventListener('pointerdown', unlockAudio, { once: true });
+  window.addEventListener('keydown', unlockAudio, { once: true });
+  window.addEventListener('touchstart', unlockAudio, { once: true });
 };
 
 // ===== 起動 =====

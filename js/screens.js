@@ -124,6 +124,13 @@ SBR.Screens.title = {
     ctx.shadowBlur = 0;
     ctx.font = "700 17px 'Noto Sans JP'"; ctx.fillStyle = '#cfe0ff';
     ctx.fillText('〜新米営業 成長物語〜', C.W / 2, 230);
+    // 音声ONの案内（まだBGM未開始のときだけ点滅表示）
+    if (!SBR.Audio.bgmKey) {
+      ctx.globalAlpha = 0.5 + 0.5 * Math.abs(Math.sin(t * 0.004));
+      ctx.font = "700 13px 'Noto Sans JP'"; ctx.fillStyle = '#ffd166';
+      ctx.fillText('🔊 クリックで音楽スタート', C.W / 2, 256);
+      ctx.globalAlpha = 1;
+    }
     ctx.restore();
     // 主人公
     SBR.Render.drawCharacter(ctx, 'hero', 'joy', C.W / 2 - 70, 300, 140, 230, { t });
